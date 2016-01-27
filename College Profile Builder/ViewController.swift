@@ -43,5 +43,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             myTableView.reloadData()
         }
     }
+    @IBAction func addButtonTapped(sender: UIBarButtonItem)
+    {
+        //Presents Alert view
+        let myAlert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
+        myAlert.addTextFieldWithConfigurationHandler{(collegeTextfield) -> Void in
+            collegeTextfield.placeholder = "College Name"
+        }
+        myAlert.addTextFieldWithConfigurationHandler{(locationTextfield) -> Void in
+            locationTextfield.placeholder = "College Location"
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        myAlert.addAction(cancelAction)
+        let addAction = UIAlertAction(title: "Add", style: .Default) { (addAction) -> Void in
+            let collegeTF = myAlert.textFields![0] as UITextField
+            let locationTF = myAlert.textFields![1] as UITextField
+            self.colleges.append(CollegeClass(Name: collegeTF.text!, Location: locationTF.text!))
+            self.myTableView.reloadData()
+        }
+        myAlert.addAction(addAction)
+        self.presentViewController(myAlert, animated: true, completion: nil)
+    }
 }
 
