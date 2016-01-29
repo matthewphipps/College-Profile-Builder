@@ -60,6 +60,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rJ1-1p-4dW">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="lHr-BL-sdS">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="BYZ-38-t0r" id="pKv-cU-L3Y"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="RK3-ku-5hE">
                             <connections>
                                 <action selector="addButtonTapped:" destination="BYZ-38-t0r" id="ppS-gU-5Yu"/>
@@ -67,6 +72,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="lHr-BL-sdS" id="WkJ-D8-hzK"/>
                         <outlet property="myTableView" destination="JOs-NW-sN7" id="24F-IV-Omk"/>
                     </connections>
                 </viewController>
@@ -74,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="1100" y="321"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="pAb-Ak-f86">
             <objects>
-                <viewController id="NQ1-Q5-GCz" sceneMemberID="viewController">
+                <viewController id="NQ1-Q5-GCz" customClass="DetailViewController" customModule="College_Profile_Builder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c9C-Im-FNL"/>
                         <viewControllerLayoutGuide type="bottom" id="xZ5-TO-pgp"/>
@@ -85,8 +91,45 @@
                     <view key="view" contentMode="scaleToFill" id="0dh-jM-1rQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DWk-lI-Qy2">
+                                <rect key="frame" x="34" y="247" width="154" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJQ-1f-fiE">
+                                <rect key="frame" x="34" y="285" width="154" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of Students" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="92r-mq-9eQ">
+                                <rect key="frame" x="34" y="323" width="154" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RMV-fc-z9W">
+                                <rect key="frame" x="49" y="95" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="WFg-cV-wJp"/>
+                                    <constraint firstAttribute="width" constant="240" id="vgd-IG-ucq"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agv-La-17D">
+                                <rect key="frame" x="88" y="361" width="46" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="NQ1-Q5-GCz" eventType="touchUpInside" id="ZUo-wc-9aO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="locationTF" destination="SJQ-1f-fiE" id="CJ5-M5-qhh"/>
+                        <outlet property="myImageView" destination="RMV-fc-z9W" id="Rmg-Np-SqH"/>
+                        <outlet property="nameTF" destination="DWk-lI-Qy2" id="Q4l-vr-wPB"/>
+                        <outlet property="numStu" destination="92r-mq-9eQ" id="o7F-dQ-gQW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEQ-kp-44A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

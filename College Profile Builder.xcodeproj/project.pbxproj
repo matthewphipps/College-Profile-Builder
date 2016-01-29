@@ -12,6 +12,7 @@
 		3F7A000E1C567F8A0006B3D9 /* College_Profile_BuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7A000D1C567F8A0006B3D9 /* College_Profile_BuilderTests.swift */; };
 		3F7A00191C567F8A0006B3D9 /* College_Profile_BuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7A00181C567F8A0006B3D9 /* College_Profile_BuilderUITests.swift */; };
 		3F7A00271C5683770006B3D9 /* CollegeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7A00261C5683770006B3D9 /* CollegeClass.swift */; };
+		3F7A00291C5A7A3C0006B3D9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7A00281C5A7A3C0006B3D9 /* DetailViewController.swift */; };
 		3F7AFFF91C567F8A0006B3D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AFFF81C567F8A0006B3D9 /* AppDelegate.swift */; };
 		3F7AFFFB1C567F8A0006B3D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AFFFA1C567F8A0006B3D9 /* ViewController.swift */; };
 		3F7AFFFE1C567F8A0006B3D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7AFFFC1C567F8A0006B3D9 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		3F7A00181C567F8A0006B3D9 /* College_Profile_BuilderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = College_Profile_BuilderUITests.swift; sourceTree = "<group>"; };
 		3F7A001A1C567F8A0006B3D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F7A00261C5683770006B3D9 /* CollegeClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeClass.swift; sourceTree = "<group>"; };
+		3F7A00281C5A7A3C0006B3D9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3F7AFFF51C567F8A0006B3D9 /* College Profile Builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "College Profile Builder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7AFFF81C567F8A0006B3D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F7AFFFA1C567F8A0006B3D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				3F7AFFF81C567F8A0006B3D9 /* AppDelegate.swift */,
 				3F7AFFFA1C567F8A0006B3D9 /* ViewController.swift */,
+				3F7A00281C5A7A3C0006B3D9 /* DetailViewController.swift */,
 				3F7AFFFC1C567F8A0006B3D9 /* Main.storyboard */,
 				3F7A00261C5683770006B3D9 /* CollegeClass.swift */,
 				3F7AFFFF1C567F8A0006B3D9 /* Assets.xcassets */,
@@ -278,6 +281,7 @@
 				3F7AFFFB1C567F8A0006B3D9 /* ViewController.swift in Sources */,
 				3F7A00271C5683770006B3D9 /* CollegeClass.swift in Sources */,
 				3F7AFFF91C567F8A0006B3D9 /* AppDelegate.swift in Sources */,
+				3F7A00291C5A7A3C0006B3D9 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +483,7 @@
 				3F7A001F1C567F8B0006B3D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F7A00201C567F8B0006B3D9 /* Build configuration list for PBXNativeTarget "College Profile BuilderTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +492,7 @@
 				3F7A00221C567F8B0006B3D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F7A00231C567F8B0006B3D9 /* Build configuration list for PBXNativeTarget "College Profile BuilderUITests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +501,7 @@
 				3F7A00251C567F8B0006B3D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F7AFFF01C567F8A0006B3D9 /* Build configuration list for PBXProject "College Profile Builder" */ = {
 			isa = XCConfigurationList;
