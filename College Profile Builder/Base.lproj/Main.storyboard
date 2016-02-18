@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9QX-Nb-T8j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9QX-Nb-T8j">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -109,15 +109,25 @@
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RMV-fc-z9W">
                                 <rect key="frame" x="49" y="95" width="125" height="125"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="WFg-cV-wJp"/>
                                     <constraint firstAttribute="width" constant="240" id="vgd-IG-ucq"/>
                                 </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agv-La-17D">
-                                <rect key="frame" x="88" y="361" width="46" height="30"/>
-                                <state key="normal" title="Save"/>
                                 <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bRx-XZ-4lH" appends="YES" id="9XU-5A-OsT"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Webpage" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vmX-Eh-nEA">
+                                <rect key="frame" x="34" y="361" width="154" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agv-La-17D">
+                                <rect key="frame" x="196" y="361" width="85" height="30"/>
+                                <state key="normal" title="Go to page"/>
+                                <connections>
+                                    <action selector="onPageButtonTapped:" destination="NQ1-Q5-GCz" eventType="touchUpInside" id="Ekq-hL-pR9"/>
                                     <action selector="saveButtonTapped:" destination="NQ1-Q5-GCz" eventType="touchUpInside" id="ZUo-wc-9aO"/>
                                 </connections>
                             </button>
@@ -129,9 +139,15 @@
                         <outlet property="myImageView" destination="RMV-fc-z9W" id="Rmg-Np-SqH"/>
                         <outlet property="nameTF" destination="DWk-lI-Qy2" id="Q4l-vr-wPB"/>
                         <outlet property="numStu" destination="92r-mq-9eQ" id="o7F-dQ-gQW"/>
+                        <outlet property="webPageTF" destination="vmX-Eh-nEA" id="gWI-ij-rSC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEQ-kp-44A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bRx-XZ-4lH">
+                    <connections>
+                        <action selector="onPictureTap:" destination="NQ1-Q5-GCz" id="Jqt-Wk-ezm"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1823" y="321"/>
         </scene>

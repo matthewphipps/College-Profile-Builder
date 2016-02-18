@@ -3,7 +3,7 @@
 //  College Profile Builder
 //
 //  Created by mphipps on 1/25/16.
-//  Copyright © 2016 aHuesing. All rights reserved.
+//  Copyright © 2016 mphipps. All rights reserved.
 //
 
 import UIKit
@@ -15,13 +15,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var myTableView: UITableView!
     var colleges : [CollegeClass] = []
     
+    override func viewWillAppear(animated: Bool)
+    {
+        myTableView.reloadData()
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         myTableView.dataSource = self
         myTableView.delegate = self
-        colleges.append(CollegeClass(Name: "University of Illinois", Location: "Champagne Urbana, IL.", NumStudents: 2, Image: UIImage(named:"School")!))
-        colleges.append(CollegeClass(Name: "Colombia", Location: "Chicago, IL.", NumStudents: 2, Image: UIImage(named:"School")!))
+        colleges.append(CollegeClass(Name: "University of Illinois", Location: "Champagne Urbana, IL.", NumStudents: 2, URL: NSURL(string: "http://illinois.edu/")!))
+        colleges.append(CollegeClass(Name: "Colombia", Location: "Chicago, IL.", NumStudents: 2))
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -58,14 +63,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         myAlert.addTextFieldWithConfigurationHandler{(numStuTextfield) -> Void in
             numStuTextfield.placeholder = "Number of students"
         }
+        myAlert.addTextFieldWithConfigurationHandler{(numStuTextfield) -> Void in
+            numStuTextfield.placeholder = "College Webpage"
+        }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         myAlert.addAction(cancelAction)
         let addAction = UIAlertAction(title: "Add", style: .Default) { (addAction) -> Void in
             let numStuTF = myAlert.textFields![2] as UITextField
             let collegeTF = myAlert.textFields![0] as UITextField
             let locationTF = myAlert.textFields![1] as UITextField
+            let webPageTF = myAlert.textFields![3] as UITextField
+            let toNSURL = NSURL(string: webPageTF.text!)!
             let toInt = Int(numStuTF.text!)!
-            self.colleges.append(CollegeClass(Name: collegeTF.text!, Location: locationTF.text!, NumStudents: toInt))
+            self.colleges.append(CollegeClass(Name: collegeTF.text!, Location: locationTF.text!, NumStudents: toInt,  URL: toNSURL))
             self.myTableView.reloadData()
         }
         myAlert.addAction(addAction)
@@ -97,7 +107,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let detailView = segue.destinationViewController as! DetailViewController
         let selectedRow = myTableView.indexPathForSelectedRow!.row
         detailView.college = colleges[selectedRow]
-        detailView.tableView = myTableView
     }
 }
 

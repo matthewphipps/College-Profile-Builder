@@ -3,7 +3,7 @@
 //  College Profile Builder
 //
 //  Created by mphipps on 1/25/16.
-//  Copyright © 2016 aHuesing. All rights reserved.
+//  Copyright © 2016 mphipps. All rights reserved.
 //
 
 import UIKit
