@@ -114,9 +114,6 @@
                                     <constraint firstAttribute="height" constant="125" id="WFg-cV-wJp"/>
                                     <constraint firstAttribute="width" constant="240" id="vgd-IG-ucq"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="bRx-XZ-4lH" appends="YES" id="9XU-5A-OsT"/>
-                                </connections>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Webpage" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vmX-Eh-nEA">
                                 <rect key="frame" x="34" y="361" width="154" height="30"/>
@@ -124,15 +121,31 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agv-La-17D">
-                                <rect key="frame" x="196" y="361" width="85" height="30"/>
-                                <state key="normal" title="Go to page"/>
+                                <rect key="frame" x="63" y="399" width="85" height="30"/>
+                                <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="onPageButtonTapped:" destination="NQ1-Q5-GCz" eventType="touchUpInside" id="Ekq-hL-pR9"/>
                                     <action selector="saveButtonTapped:" destination="NQ1-Q5-GCz" eventType="touchUpInside" id="ZUo-wc-9aO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRD-ho-6Wb">
+                                <rect key="frame" x="196" y="361" width="85" height="30"/>
+                                <state key="normal" title="Webpage"/>
+                                <connections>
+                                    <action selector="onPageButtonTapped:" destination="NQ1-Q5-GCz" eventType="touchUpInside" id="yeM-jV-Tzp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCx-0M-HWr">
+                                <rect key="frame" x="196" y="143" width="85" height="30"/>
+                                <state key="normal" title="Change"/>
+                                <connections>
+                                    <action selector="onPictureTap:" destination="NQ1-Q5-GCz" eventType="touchUpInside" id="krn-OA-Lqu"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PCx-0M-HWr" firstAttribute="leading" secondItem="RMV-fc-z9W" secondAttribute="trailing" id="zXn-LT-JkR"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="locationTF" destination="SJQ-1f-fiE" id="CJ5-M5-qhh"/>
@@ -143,11 +156,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEQ-kp-44A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="bRx-XZ-4lH">
-                    <connections>
-                        <action selector="onPictureTap:" destination="NQ1-Q5-GCz" id="Jqt-Wk-ezm"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1823" y="321"/>
         </scene>
