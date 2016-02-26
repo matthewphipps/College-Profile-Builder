@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import MapKit
 
 class DetailViewController: UIViewController, SFSafariViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
@@ -63,5 +64,10 @@ class DetailViewController: UIViewController, SFSafariViewControllerDelegate, UI
             let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
             self.myImageView.image = selectedImage
         }
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let mapView = segue.destinationViewController as! MapViewController
+        mapView.location = nameTF.text!
     }
 }
